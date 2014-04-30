@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  get 'book/login'
 
-  get 'book/admin'
+  devise_for :books
+  root 'book#index'
+  
+  get '/login' => 'book#login'
 
-  get 'book/logueur'
+  get '/admin' => 'book#admin'
+
+  get '/logueur' => 'book#logueur'
+
+  get '/consult' => 'book#consult'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
